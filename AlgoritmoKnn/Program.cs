@@ -372,6 +372,9 @@ namespace AlgoritmoKnn {
             return "Virginica";
         }
 
+        /// <summary>
+        /// Metodo que imprime la matriz con los resultados del algoritmo
+        /// </summary>
         public void ImprimirMatriz () {
 
             Console.WriteLine("+------------+    1    +    3    +    5    +   10   +");
@@ -383,6 +386,11 @@ namespace AlgoritmoKnn {
                 aciertos [1, 2] + "   |   " + aciertos [1, 3] + "   |");
             Console.WriteLine("+------------+---------+---------+---------+--------+");
         }
+
+        /// <summary>
+        /// Metodo main que inicia el programa
+        /// </summary>
+        /// <param name="args"></param>
         static void Main (string [] args) {
 
             Console.WriteLine("");
