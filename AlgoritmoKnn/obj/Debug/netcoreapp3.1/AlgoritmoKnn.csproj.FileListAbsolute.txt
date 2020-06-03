@@ -1,0 +1,13 @@
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.exe
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.deps.json
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.runtimeconfig.json
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.runtimeconfig.dev.json
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.dll
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\bin\Debug\netcoreapp3.1\AlgoritmoKnn.pdb
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.csprojAssemblyReference.cache
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.AssemblyInfoInputs.cache
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.AssemblyInfo.cs
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.csproj.CoreCompileInputs.cache
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.dll
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.pdb
+C:\Users\juanc\Documents\GitHub\AlgoritmoK-nn\AlgoritmoKnn\obj\Debug\netcoreapp3.1\AlgoritmoKnn.genruntimeconfig.cache

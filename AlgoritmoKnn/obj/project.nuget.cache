@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3/W8tIl+DyXm4hx2PJfFbhQKe77VhPlS4Cm7QbZgOz8htNRQWFYFKmGprfAgZxjUZ/WSMoIJX3yfQgSb9NBf0Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\juanc\\Documents\\GitHub\\AlgoritmoK-nn\\AlgoritmoKnn\\AlgoritmoKnn.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\juanc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
