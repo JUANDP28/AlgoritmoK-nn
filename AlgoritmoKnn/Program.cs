@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AlgoritmoKnn {
 
@@ -8,6 +9,8 @@ namespace AlgoritmoKnn {
         List<Individuo> iris = new List<Individuo>();
         List<Individuo> entrenamiento = new List<Individuo>();
         List<Individuo> prueba = new List<Individuo>();
+        List<Individuo> distanciasSelec = new List<Individuo>();
+        Double [,] aciertos = new Double [2,4];
 
         /// <summary>
         /// Metodo que carga la base de datos iris
@@ -234,6 +237,152 @@ namespace AlgoritmoKnn {
             }
         }
 
+        /// <summary>
+        /// Metodo que implementa el algoritmo k-nn
+        /// </summary>
+        public void AlgoritmoKNN () {
+
+            foreach (Individuo elemento in prueba) {
+
+                foreach (Individuo elemento2 in entrenamiento) {
+
+                    CalcularDistancia(elemento, elemento2);
+                }
+
+                int contador = 0;
+
+                foreach (Individuo distancia in entrenamiento.OrderBy(x => x.distancia)) {
+
+                    if (contador < 10) {
+
+                        distanciasSelec.Add(distancia);
+                        contador++;
+                    }
+                }
+
+                int k = 1;
+
+                if (k == 1) {
+
+                    if (elemento.nombre == distanciasSelec[0].nombre) {
+
+                        aciertos [0,0] += 1;
+                    }
+
+                    aciertos [1, 0] = (aciertos [0, 0] * 100) / 50;
+                }
+
+                k = 3;
+
+                if (k == 3) {
+
+                    if (elemento.nombre == Mayoria(distanciasSelec, k)) {
+
+                        aciertos [0, 1] += 1;
+                    }
+
+                    aciertos [1, 1] = (aciertos [0, 1] * 100) / 50;
+                }
+
+                k = 5;
+
+                if (k == 5) {
+
+                    if (elemento.nombre == Mayoria(distanciasSelec, k)) {
+
+                        aciertos [0, 2] += 1;
+                    }
+
+                    aciertos [1, 2] = (aciertos [0, 2] * 100) / 50;
+                }
+
+                k = 10;
+
+                if (k == 10) {
+
+                    if (elemento.nombre == Mayoria(distanciasSelec, k)) {
+
+                        aciertos [0, 3] += 1;
+                    }
+
+                    aciertos [1, 3] = (aciertos [0, 3] * 100) / 50;
+                }
+
+                distanciasSelec.Clear();
+            }
+
+            ImprimirMatriz();
+        }
+
+        /// <summary>
+        /// Metodod que calcula la distancia de un individuo a otro
+        /// </summary>
+        /// <param name="elementoP">Elemento del conjunto prueba</param>
+        /// <param name="elementoE">Elemento del conjunto entrenamiento</param>
+        public void CalcularDistancia (Individuo elementoP, Individuo elementoE) {
+
+            double suma = 0;
+
+            for (int i = 0; i < elementoP.filas.Length; i++) {
+
+                suma += Math.Pow((elementoP.filas [i] - elementoE.filas[i]),2);
+            }
+
+            elementoE.distancia = Math.Sqrt(suma);
+        }
+
+        /// <summary>
+        /// Metodo que la clase del Inidividuo
+        /// </summary>
+        /// <param name="lista">Lista con las distancias cortas</param>
+        /// <param name="k">Numero de elementos a utilizar de la lista</param>
+        /// <returns>Nombre de la posible clase</returns>
+        public String Mayoria (List<Individuo> lista, int k) {
+            
+            int setosa = 0;
+            int versicolor = 0;
+            int virginica = 0;
+
+            foreach (Individuo elemento in lista) {
+
+                if (setosa + versicolor + virginica < k) {
+
+                    switch (elemento.nombre) {
+
+                        case "Setosa": setosa++;
+                            break;
+                        case "Versicolor": versicolor++;
+                            break;
+                        case "Virginica": virginica++;
+                            break;
+                    }
+                }
+            }
+
+            if ((setosa > versicolor) && (setosa > virginica)) {
+
+                return "Setosa";
+            }
+
+            if ((versicolor > setosa) && (versicolor > virginica)) {
+
+                return "Versicolor";
+            }
+
+            return "Virginica";
+        }
+
+        public void ImprimirMatriz () {
+
+            Console.WriteLine("+------------+    1    +    3    +    5    +   10   +");
+            Console.WriteLine("| ACIERTOS   |    "+ aciertos[0,0] +
+                "   |    "+ aciertos [0, 1] + "   |    "+
+                aciertos [0, 2] + "   |   "+ aciertos [0, 3] + "   |");
+            Console.WriteLine("| PORCENTAJE |    "+ aciertos[1,0] +
+                "   |    " + aciertos [1, 1] + "   |    " +
+                aciertos [1, 2] + "   |   " + aciertos [1, 3] + "   |");
+            Console.WriteLine("+------------+---------+---------+---------+--------+");
+        }
         static void Main (string [] args) {
 
             Console.WriteLine("");
@@ -249,7 +398,9 @@ namespace AlgoritmoKnn {
             Console.WriteLine("Entrenamiento: " + algoritmo.entrenamiento.Count);
             Console.WriteLine("Prueba: " + algoritmo.prueba.Count);
 
-
+            Console.WriteLine("");
+            algoritmo.AlgoritmoKNN();
+            
         }
     }
 }
